@@ -1,0 +1,31 @@
+.home-wrapper {
+    background-color: #ffebe0;
+    padding-bottom: 20px;
+}
+
+.home-title-wrapper {
+    padding-top: 10px;
+    padding-bottom: 25px;
+    display: flex;
+}
+
+.img-wrapper {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    width: 300px;
+}
+
+.home-title {
+    flex-basis: 100%;
+    text-align: center;
+    color: #545454;
+    font-size: 18px;
+    font-weight: 750;
+}
+
+.home-imgs-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

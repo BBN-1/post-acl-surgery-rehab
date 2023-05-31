@@ -1,0 +1,54 @@
+/* Header.module.css */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: transparent;
+}
+
+.homeIcon {
+    margin-right: 10px;
+}
+
+.home-icon {
+    color: #f361a7;
+}
+
+.title {
+    font-size: 19.5px;
+  
+}
+
+.morning {
+    color: white; 
+}
+
+.afternoon {
+    color: orange; 
+}
+
+.night {
+    color: red; 
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.greeting {
+  color: #f361a7;
+}
+
+.header-name {
+  color: #f361a7;
+}
+
+
