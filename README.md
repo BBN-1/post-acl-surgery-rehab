@@ -13,7 +13,7 @@ The app can be accessed at [https://acl-rehab-app.netlify.app/](https://acl-reha
 ## Features
 
 - Exercise Guidance: The app provides exercise instructions and demonstrations specifically tailored for ACL rehabilitation.
-- Progress Tracking: Users can track their progress and record completed exercises.
+- Progress Tracking: *Currently under development* - This feature will allow users to track their progress and record completed exercises.
 - Swipe Gestures: The app supports swiping motions on the exercise pages, allowing for easy navigation between exercises.
 
 ## Development
