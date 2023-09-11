@@ -22,11 +22,11 @@ const getGreeting = () => {
         icon = <FontAwesomeIcon icon={faMugHot} />;
         timeClass = styles.morning;
     } else if (currentHour >= 12 && currentHour < 18) {
-        greeting = "Добър Ден ";
+        greeting = "Добър Ден! ";
         icon = <FontAwesomeIcon icon={faSun} />;
         timeClass = styles.afternoon;
     } else {
-        greeting = "Добър Вечер ";
+        greeting = "Добър Вечер";
         icon = <FontAwesomeIcon icon={faWineGlass} />;
         timeClass = styles.night;
     }

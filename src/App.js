@@ -1,10 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "../src/components/Home/Home";
-import StageTwo from "./components/Stages/StageTwo/StageTwo";
-import StageTwoExercisesStr from "../src/components/Exercises/StageTwoExerciseStr/StageTwoExerciseStr";
-import StageTwoExercisesRom from "./components/Exercises/StageTwoExercisesRom/StageTwoExercisesRom";
-import Header from "./components/Header/Header"
+import Header from "./components/Header/Header";
+import StagesDetails from "./components/StagesDetails/StagesDetails";
+import Exercises from "./components/Exercises/Exercises";
 
 function App() {
     return (
@@ -12,11 +11,14 @@ function App() {
             <Header />
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/stage-two" element={<StageTwo />} />
-                <Route path="/stage-two-str" element={<StageTwoExercisesStr/>}/>
+
                 <Route
-                    path="/stage-two-rom"
-                    element={<StageTwoExercisesRom />}
+                    path="/stages/:stageNumber"
+                    element={<StagesDetails />}
+                />
+                <Route
+                    path="/exercises/:exerciseStageAndType"
+                    element={<Exercises />}
                 />
             </Routes>
         </div>
