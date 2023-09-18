@@ -26,14 +26,29 @@ const StagesDetails = () => {
                         />
                     </div>
                     <div className={styles["stageTwo-title-wrapper"]}>
-                        <Link
-                            to={`/exercises/${stageDetails.route_rom}`}
-                            className={styles["stageTwo-exercises-link"]}
-                        >
-                            <h1 className={styles["stageTwo-title"]}>
-                                {stageDetails.title_rom}
-                            </h1>
-                        </Link>
+
+                    {stageDetails.route_special ? (
+                            <Link
+                                to={`/exercises/${stageDetails.route_special}`}
+                                className={styles["stageTwo-exercises-link"]}
+                            >
+                                <h1 className={styles["stageTwo-title"]}>
+                                    {stageDetails.title_stage_special}
+                                </h1>
+                            </Link>
+                        ) : null}
+
+                        {stageDetails.route_rom ? (
+                            <Link
+                                to={`/exercises/${stageDetails.route_rom}`}
+                                className={styles["stageTwo-exercises-link"]}
+                            >
+                                <h1 className={styles["stageTwo-title"]}>
+                                    {stageDetails.title_rom}
+                                </h1>
+                            </Link>
+                        ) : null}
+
                         <Link
                             to={`/exercises/${stageDetails.route_str}`}
                             className={styles["stageTwo-exercises-link"]}
@@ -42,6 +57,17 @@ const StagesDetails = () => {
                                 {stageDetails.title_str}
                             </h1>
                         </Link>
+
+                        {stageDetails.route_balance ? (
+                            <Link
+                                to={`/exercises/${stageDetails.route_balance}`}
+                                className={styles["stageTwo-exercises-link"]}
+                            >
+                                <h1 className={styles["stageTwo-title"]}>
+                                    {stageDetails.title_balance}
+                                </h1>
+                            </Link>
+                        ) : null}
                     </div>
 
                     <section className={styles["stageTwo-info-wrapper"]}>

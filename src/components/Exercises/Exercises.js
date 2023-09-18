@@ -12,7 +12,6 @@ const Exercises = () => {
 
     const { exerciseStageAndType } = useParams();
 
-
     useEffect(() => {
         const currentExercisesList = exercisesListData.find(
             (item) => item.route === exerciseStageAndType
@@ -84,7 +83,8 @@ const Exercises = () => {
                                             className={styles["next-str-upper"]}
                                         >
                                             {" "}
-                                            &lt; II Етап Упражнения
+                                            &lt;{" "}
+                                            {`${exerciseList?.stage_nav} Етап Упражнения`}
                                         </span>
                                     </Link>
                                     <span className={styles["next-page-str"]}>
@@ -101,7 +101,8 @@ const Exercises = () => {
                                     }
                                     to={`/stages/${exerciseList?.main_stage_route}`}
                                 >
-                                    &lt; II Етап Упражнения
+                                    &lt;{" "}
+                                    {`${exerciseList?.stage_nav} Етап Упражнения`}
                                 </Link>
                             </>
                         )}
@@ -111,15 +112,20 @@ const Exercises = () => {
                     <h1 className={styles["stage-two-rom-card-title"]}>
                         {exerciseList?.exercise_data?.[currentExercise]?.title}
                     </h1>
-                    <h2 className={styles["stage-two-rom-card-subtitle"]}>
-                        {
-                            exerciseList?.exercise_data?.[currentExercise]
-                                ?.subtitle
-                        }
-                    </h2>
+
+                    {exerciseList?.exercise_data?.[currentExercise]
+                        ?.subtitle ? (
+                        <h2 className={styles["stage-two-rom-card-subtitle"]}>
+                            {
+                                exerciseList?.exercise_data?.[currentExercise]
+                                    ?.subtitle
+                            }
+                        </h2>
+                    ) : null}
                 </div>
                 <div className={styles["stage-two-rom-card-img-holder"]}>
                     <div className={styles["row"]}>
+                        <span className={styles["image-number"]}>1.</span>
                         <img
                             className={styles["stage-two-rom-card-img-one"]}
                             src={
@@ -130,19 +136,27 @@ const Exercises = () => {
                         />
                         {exerciseList?.exercise_data?.[currentExercise]
                             ?.img2 && (
-                            <img
-                                className={styles["stage-two-rom-card-img-two"]}
-                                src={
-                                    exerciseList?.exercise_data?.[
-                                        currentExercise
-                                    ]?.img2
-                                }
-                                alt="exercise_img_2"
-                            />
+                            <>
+                                <span className={styles["image-number"]}>
+                                    2.
+                                </span>
+                                <img
+                                    className={
+                                        styles["stage-two-rom-card-img-two"]
+                                    }
+                                    src={
+                                        exerciseList?.exercise_data?.[
+                                            currentExercise
+                                        ]?.img2
+                                    }
+                                    alt="exercise_img_2"
+                                />
+                            </>
                         )}
                     </div>
                     {exerciseList?.exercise_data?.[currentExercise]?.img3 && (
                         <div className={styles["row"]}>
+                            <span className={styles["image-number"]}>3.</span>
                             <img
                                 className={
                                     styles["stage-two-rom-card-img-three"]
@@ -156,67 +170,161 @@ const Exercises = () => {
                             />
                             {exerciseList?.exercise_data?.[currentExercise]
                                 ?.img4 && (
-                                <img
-                                    className={
-                                        styles["stage-two-rom-card-img-four"]
-                                    }
-                                    src={
-                                        exerciseList?.exercise_data?.[
-                                            currentExercise
-                                        ]?.img4
-                                    }
-                                    alt="exercise_img_4"
-                                />
+                                <>
+                                    <span className={styles["image-number"]}>
+                                        4.
+                                    </span>
+                                    <img
+                                        className={
+                                            styles[
+                                                "stage-two-rom-card-img-four"
+                                            ]
+                                        }
+                                        src={
+                                            exerciseList?.exercise_data?.[
+                                                currentExercise
+                                            ]?.img4
+                                        }
+                                        alt="exercise_img_4"
+                                    />
+                                </>
                             )}
+                        </div>
+                    )}
+                    {exerciseList?.exercise_data?.[currentExercise]?.img5 && (
+                        <div className={styles["row"]}>
+                            <span className={styles["image-number"]}>5.</span>
+                            <img
+                                className={
+                                    styles["stage-two-rom-card-img-five"]
+                                }
+                                src={
+                                    exerciseList.exercise_data?.[
+                                        currentExercise
+                                    ]?.img5
+                                }
+                                alt="exercise_img_5"
+                            />
                         </div>
                     )}
                 </div>
 
-                <div
-                    className={styles["stage-two-rom-card-preparartion-holder"]}
-                >
-                    <p
+                {exerciseList?.exercise_data?.[currentExercise]?.preparation
+                    ?.length > 0 ? (
+                    <div
                         className={
-                            styles["stage-two-rom-card-execution-subtitle"]
+                            styles["stage-two-rom-card-preparartion-holder"]
                         }
                     >
-                        Подготовка
-                    </p>
-                    <ul>
-                        {exerciseList?.exercise_data?.[
-                            currentExercise
-                        ]?.preparation?.map((step, index) => (
-                            <li
-                                className={styles["stage-two-rom-card-li"]}
-                                key={index}
-                            >
-                                - {step}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+                        <p
+                            className={
+                                styles["stage-two-rom-card-execution-subtitle"]
+                            }
+                        >
+                            Подготовка
+                        </p>
+                        <ul>
+                            {exerciseList?.exercise_data?.[
+                                currentExercise
+                            ]?.preparation?.map((step, index) => (
+                                <li
+                                    className={styles["stage-two-rom-card-li"]}
+                                    key={index}
+                                >
+                                    - {step}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ) : null}
 
-                <div className={styles["stage-two-rom-card-execution-holder"]}>
-                    <p
+                {exerciseList?.exercise_data?.[currentExercise]?.options &&
+                exerciseList?.exercise_data?.[currentExercise]?.options
+                    ?.length > 0 ? (
+                    <div
                         className={
-                            styles["stage-two-rom-card-execution-subtitle"]
+                            styles["stage-two-rom-card-preparartion-holder"]
                         }
                     >
-                        Изпълнение
-                    </p>
-                    <ul>
-                        {exerciseList?.exercise_data?.[
-                            currentExercise
-                        ]?.execution?.map((step, index) => (
-                            <li
-                                className={styles["stage-two-rom-card-li"]}
-                                key={index}
-                            >
-                                - {step}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+                        <p
+                            className={
+                                styles["stage-two-rom-card-execution-subtitle"]
+                            }
+                        >
+                            Опции
+                        </p>
+                        <ul>
+                            {exerciseList?.exercise_data?.[
+                                currentExercise
+                            ]?.options?.map((step, index) => (
+                                <li
+                                    className={styles["stage-two-rom-card-li"]}
+                                    key={index}
+                                >
+                                    - {step}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ) : null}
+
+                {exerciseList?.exercise_data?.[currentExercise]?.execution
+                    ?.length > 0 ? (
+                    <div
+                        className={
+                            styles["stage-two-rom-card-execution-holder"]
+                        }
+                    >
+                        <p
+                            className={
+                                styles["stage-two-rom-card-execution-subtitle"]
+                            }
+                        >
+                            Изпълнение
+                        </p>
+                        <ul>
+                            {exerciseList?.exercise_data?.[
+                                currentExercise
+                            ]?.execution?.map((step, index) => (
+                                <li
+                                    className={styles["stage-two-rom-card-li"]}
+                                    key={index}
+                                >
+                                    - {step}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ) : null}
+
+                {exerciseList?.exercise_data?.[currentExercise]?.notes?.length >
+                0 ? (
+                    <div
+                        className={
+                            styles["stage-two-rom-card-execution-holder"]
+                        }
+                    >
+                        <p
+                            className={
+                                styles["stage-two-rom-card-execution-subtitle"]
+                            }
+                        >
+                            Забележки
+                        </p>
+                        <ul>
+                            {exerciseList?.exercise_data?.[
+                                currentExercise
+                            ]?.notes?.map((note, index) => (
+                                <li
+                                    className={styles["stage-two-rom-card-li"]}
+                                    key={index}
+                                >
+                                    - {note}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                ) : null}
             </div>
             <div className="arrow-container">
                 <div className="arrow">

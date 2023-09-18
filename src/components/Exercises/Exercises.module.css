@@ -1,34 +1,30 @@
 @keyframes fadeAnimation {
     from {
-      opacity: 0;
+        opacity: 0;
     }
     to {
-      opacity: 1;
+        opacity: 1;
     }
-  }
-  
-  .fade-in {
+}
+
+.fade-in {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
-  }
-  
-  .fade-in.active {
+}
+
+.fade-in.active {
     opacity: 1;
-  }
+}
 
 .stage-two-rom-wrapper {
-  max-width: 900px;
-  margin: 0 auto;
-  padding-bottom: 15px;
-  
-    
+    max-width: 900px;
+    margin: 0 auto;
+    padding-bottom: 15px;
 }
 
 ul {
     list-style: none;
 }
-
-
 
 .stage-two-rom-card {
     color: #545454;
@@ -39,32 +35,35 @@ ul {
     align-items: center;
     gap: 22px;
     padding-bottom: 15px;
-    
 }
 
 .stage-two-rom-card-img-holder {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 330px;
-  padding-bottom: 20px;
-  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 330px;
+    padding-bottom: 20px;
 }
 
 .row {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-bottom: 3px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .stage-two-rom-card-img-one,
 .stage-two-rom-card-img-two,
 .stage-two-rom-card-img-three,
-.stage-two-rom-card-img-four {
-  max-width: 47%;
-  height: auto;
-  object-fit: contain;
+.stage-two-rom-card-img-four,
+.stage-two-rom-card-img-five {
+    width: 150px;
+    height: 150px;
+
+    margin: 4px 4px 6px 4px;
+    max-width: 47%;
+    object-fit: contain;
+    border-radius: 7px;
+    box-shadow: 5px 5px 10px #b9bbc4;
 }
 
 .stage-two-rom-card-titles-holder {
@@ -73,14 +72,12 @@ ul {
     height: 180px;
     display: flex;
     flex-direction: column;
-    
 }
 
 .stage-two-rom-card-title {
     padding-top: 20px;
     padding-bottom: 10px;
     font-size: 20px;
-    
 }
 
 .stage-two-rom-card-subtitle {
@@ -90,17 +87,17 @@ ul {
 .stage-two-rom-card-preparartion-holder {
     width: 330px;
     height: auto;
-    background-color: #FFF7F1;
+    background-color: #fff7f1;
     border-radius: 7px;
-    box-shadow: 5px 5px 10px #b9bbc4
+    box-shadow: 5px 5px 10px #b9bbc4;
 }
 
 .stage-two-rom-card-execution-holder {
     width: 330px;
     height: auto;
-    background-color: #FFF7F1;
+    background-color: #fff7f1;
     border-radius: 7px;
-    box-shadow: 5px 5px 10px #b9bbc4
+    box-shadow: 5px 5px 10px #b9bbc4;
 }
 
 .stage-two-rom-card-execution-subtitle {
@@ -118,61 +115,53 @@ button {
 }
 
 .arrow-container {
-    width: 350px; 
-    height: 30px; 
+    width: 350px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    
-    
-  }
-  
-  .arrow {
+}
+
+.arrow {
     /* background: transparent; */
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #F361A7;
-  }
-  
-  .arrow-button span{
+    background-color: #f361a7;
+}
+
+.arrow-button span {
     font-size: 16px; /* Adjust the font size */
-    color: #F361A7; /* Adjust the text color */
+    color: #f361a7; /* Adjust the text color */
     cursor: pointer;
     transition: opacity 0.3s ease-in-out;
     opacity: 0;
     animation: pulsate 1.5s ease-in-out infinite;
+}
 
-  }
-  
-  .arrow-button.show {
+.arrow-button.show {
     opacity: 1;
-  }
-  
-  .arrow-placeholder {
+}
+
+.arrow-placeholder {
     width: 100%;
     height: 100%;
-   
-  }
+}
 
-
-  .stage-two-rom-types-linkback {
+.stage-two-rom-types-linkback {
     text-decoration: none;
     padding-right: 10px;
-    color: #F361A7;
+    color: #f361a7;
     font-weight: 500;
-  }
-  
+    cursor: pointer;
+}
 
-  .next-page-str {
+.next-page-str {
     text-decoration: none;
     padding-right: 10px;
     padding-left: 10px;
-    color: #F361A7;
+    color: #f361a7;
     font-weight: 500;
-
-  }
- 
-
+    cursor: pointer;
+}
