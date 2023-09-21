@@ -4,6 +4,8 @@ import Home from "../src/components/Home/Home";
 import Header from "./components/Header/Header";
 import StagesDetails from "./components/StagesDetails/StagesDetails";
 import Exercises from "./components/Exercises/Exercises";
+import Footer from "./components/Footer/Footer";
+import ExerciseItem from "./components/ExerciseItem/ExerciseItem";
 
 function App() {
     return (
@@ -20,7 +22,12 @@ function App() {
                     path="/exercises/:exerciseStageAndType"
                     element={<Exercises />}
                 />
+                    <Route
+                    path="/exercises/:exerciseStageAndType/:exerciseId"
+                    element={<ExerciseItem />}
+                />
             </Routes>
+            <Footer />
         </div>
     );
 }

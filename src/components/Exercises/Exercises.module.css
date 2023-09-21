@@ -1,4 +1,4 @@
-@keyframes fadeAnimation {
+/* @keyframes fadeAnimation {
     from {
         opacity: 0;
     }
@@ -69,7 +69,7 @@ ul {
 .stage-two-rom-card-titles-holder {
     align-self: center;
     width: 330px;
-    height: 180px;
+    height: auto;
     display: flex;
     flex-direction: column;
 }
@@ -124,44 +124,113 @@ button {
 
 .arrow {
     /* background: transparent; */
-    width: 100%;
+    /* width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #f361a7;
-}
+} */
 
-.arrow-button span {
-    font-size: 16px; /* Adjust the font size */
-    color: #f361a7; /* Adjust the text color */
-    cursor: pointer;
-    transition: opacity 0.3s ease-in-out;
-    opacity: 0;
-    animation: pulsate 1.5s ease-in-out infinite;
-}
 
-.arrow-button.show {
+
+/* .arrow-button.show {
     opacity: 1;
 }
 
 .arrow-placeholder {
     width: 100%;
     height: 100%;
-}
+} */
 
-.stage-two-rom-types-linkback {
+/* .stage-two-rom-types-linkback {
     text-decoration: none;
     padding-right: 10px;
     color: #f361a7;
     font-weight: 500;
     cursor: pointer;
-}
+} */
 
-.next-page-str {
+/* .next-page-str {
     text-decoration: none;
     padding-right: 10px;
     padding-left: 10px;
     color: #f361a7;
     font-weight: 500;
     cursor: pointer;
+}  */
+
+/* NEW  */
+
+.stage-exercises-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.exercises-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap:7px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.exercise-card {
+  background-color: #FFE8D1;
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+    height: 130px;
+    text-decoration: none;
+    color: #545454;
+    border-radius: 7px;
+    box-shadow: 5px 5px 10px #b9bbc4;
+    cursor: pointer;
+}
+
+.exercise-card-img {
+    height: 120px;
+    width: 120px;
+    object-fit: contain;
+    align-self: center;
+}
+
+.exercise-card-title {
+    align-self: center;
+    text-align: left;
+    font-size: 16px;
+
+}
+
+.exercises-wrapper {
+  margin-top: 20px;
+}
+
+.exercises-link-back-wrapper {
+  max-width: 700px;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  margin: 0 auto;
+ 
+}
+
+/* link back */
+.main-category-link {
+  width: 100px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto; 
+  font-size: 20px;
+  font-weight: 600;
+  color: #545454;
+  border-radius: 21px;
+  box-shadow: 5px 5px 10px #b9bbc4;
+  padding: 5px 15px;
+  transition: color 0.3s;
+  
+ 
+}
+
+.main-category-link:hover {
+  color: #ff0000;
 }

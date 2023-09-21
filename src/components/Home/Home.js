@@ -6,16 +6,11 @@ import RehabStages from "./RehabStages/RehabStages";
 import { useEffect, useState } from "react";
 
 const Home = () => {
-
-
-
     const [stage, setStages] = useState([]);
+    
     useEffect(() => {
-        setStages(stagesDataHomepage)
-    },[])
-
-
-// console.log(`this is home ${stage[3].route}`);
+        setStages(stagesDataHomepage);
+    }, []);
 
     return (
         <>
@@ -29,8 +24,7 @@ const Home = () => {
 
                 <div className={styles["home-imgs-wrapper"]}>
                     {stage.map((stageItem) => (
-                        <RehabStages {...stageItem} key={stageItem.id}/>
-                        
+                        <RehabStages {...stageItem} key={stageItem.id} />
                     ))}
                 </div>
             </div>
