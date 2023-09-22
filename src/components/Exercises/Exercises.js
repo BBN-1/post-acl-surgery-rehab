@@ -1,8 +1,6 @@
 import styles from "./Exercises.module.css";
 import { useState, useEffect } from "react";
-
-import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { useParams , Link } from "react-router-dom";
 import exercisesListData from "../../ExerciseData/exercises/exercises";
 
 const Exercises = () => {

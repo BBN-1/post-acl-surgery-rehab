@@ -109,7 +109,6 @@ ul {
     display: flex;
     flex-direction: column;
     width: 330px;
-
     justify-content: center;
 }
 
@@ -118,6 +117,7 @@ ul {
     width: 320px;
     justify-content: center;
     gap: 10px;
+    padding-bottom: 5px;
 }
 
 .exercise-navigation a {
