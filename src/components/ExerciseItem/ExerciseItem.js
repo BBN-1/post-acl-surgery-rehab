@@ -1,26 +1,40 @@
 import styles from "./ExerciseItem.module.css";
 import exercisesListData from "../../ExerciseData/exercises/exercises";
 import { useParams, Link } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import exercisesListDataInEnglish from "../../ExerciseData/exercises/exercisesInEnglish";
+import { LanguageContext } from "../../context/LanguageContext";
 
 const ExerciseItem = () => {
     const { exerciseStageAndType, exerciseId } = useParams();
-
     const [exerciseData, setExerciseData] = useState(null);
-
     const [currentExercisesList, setCurrentExercisesList] = useState(null);
+    const { language } = useContext(LanguageContext);
 
     useEffect(() => {
-        // Find the currentExercisesList and set it in state
-        const foundList = exercisesListData.find(
-            (item) => item.route === exerciseStageAndType
-        );
+        // First check what language is selected, then load the proper exercise list details
+        if (language === "en") {
+            const foundList = exercisesListDataInEnglish.find(
+                (item) => item.route === exerciseStageAndType
+            );
 
-        if (foundList) {
-            setCurrentExercisesList(foundList);
-            setExerciseData(foundList.exercise_data[exerciseId - 1]);
+            if (foundList) {
+                setCurrentExercisesList(foundList);
+                setExerciseData(foundList.exercise_data[exerciseId - 1]);
+            }
+        } else {
+            const foundList = exercisesListData.find(
+                (item) => item.route === exerciseStageAndType
+            );
+
+            if (foundList) {
+                setCurrentExercisesList(foundList);
+                setExerciseData(foundList.exercise_data[exerciseId - 1]);
+            }
         }
-    }, [exerciseStageAndType, exerciseId]);
+    }, [exerciseStageAndType, exerciseId, language]);
+
+  
 
     return (
         <div className={styles["stage-two-rom-card"]}>
@@ -48,7 +62,8 @@ const ExerciseItem = () => {
                     to={`/exercises/${exerciseStageAndType}`}
                     className={styles["main-category-link"]}
                 >
-                    Назад
+                    {language === "en" ? "Back" : "Назад"}
+                    
                 </Link>
             </div>
             <div className={styles["stage-two-rom-card-titles-holder"]}>
@@ -127,7 +142,8 @@ const ExerciseItem = () => {
                             styles["stage-two-rom-card-execution-subtitle"]
                         }
                     >
-                        Подготовка
+                        {language === "en" ? "Preparation" : "Подготовка"}
+                        
                     </p>
                     <ul>
                         {exerciseData?.preparation?.map((step, index) => (
@@ -151,7 +167,8 @@ const ExerciseItem = () => {
                             styles["stage-two-rom-card-execution-subtitle"]
                         }
                     >
-                        Опции
+                        {language === "en" ? "Options" : "Опции"}
+                        
                     </p>
                     <ul>
                         {exerciseData?.options?.map((step, index) => (
@@ -173,7 +190,8 @@ const ExerciseItem = () => {
                             styles["stage-two-rom-card-execution-subtitle"]
                         }
                     >
-                        Изпълнение
+                        {language === "en" ? "Execution" : "Изпълнение"}
+                       
                     </p>
                     <ul>
                         {exerciseData?.execution?.map((step, index) => (
@@ -195,7 +213,8 @@ const ExerciseItem = () => {
                             styles["stage-two-rom-card-execution-subtitle"]
                         }
                     >
-                        Забележки
+                        {language === "en" ? "Notes" : "Забележки"}
+                        
                     </p>
                     <ul>
                         {exerciseData?.notes?.map((note, index) => (

@@ -1,19 +1,31 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import styles from "./StagesDetails.module.css";
 import { Link } from "react-router-dom";
 import stagesDetails from "../../ExerciseData/stagesDetails/stagesDetails";
+import stagesDetailsInEnglish from "../../ExerciseData/stagesDetails/stagesDetailsInEnglish";
+import { LanguageContext } from "../../context/LanguageContext";
 
 const StagesDetails = () => {
     const { stageNumber } = useParams();
     const [stageDetails, setStageDetails] = useState({});
+    const { language } = useContext(LanguageContext);
+   
 
+    // First check what language is selected, then load the proper stage details
     useEffect(() => {
-        const currentStage = stagesDetails.find(
-            (item) => item.route === stageNumber
-        );
-        setStageDetails(currentStage);
-    }, [stageNumber]);
+        if (language === "en") {
+            const currentStage = stagesDetailsInEnglish.find(
+                (item) => item.route === stageNumber
+            );
+            setStageDetails(currentStage);
+        } else {
+            const currentStage = stagesDetails.find(
+                (item) => item.route === stageNumber
+            );
+            setStageDetails(currentStage);
+        }
+    }, [stageNumber, language]);
 
     return (
         <>
@@ -26,8 +38,7 @@ const StagesDetails = () => {
                         />
                     </div>
                     <div className={styles["stageTwo-title-wrapper"]}>
-
-                    {stageDetails.route_special ? (
+                        {stageDetails.route_special ? (
                             <Link
                                 to={`/exercises/${stageDetails.route_special}`}
                                 className={styles["stageTwo-exercises-link"]}
@@ -83,7 +94,8 @@ const StagesDetails = () => {
                                         styles["stageTwo-goals-upper-title"]
                                     }
                                 >
-                                    ЦЕЛИ
+                                    {language === "en" ? "GOALS" : "ЦЕЛИ"}
+                                   
                                 </h2>
                             </div>
 
@@ -108,7 +120,10 @@ const StagesDetails = () => {
                                         styles["stageTwo-education-upper-title"]
                                     }
                                 >
-                                    ОБУЧЕНИЕ НА ПАЦИЕНТА
+                                    {language === "en"
+                                        ? "EDUCATION"
+                                        : "ОБУЧЕНИЕ НА ПАЦИЕНТА"}
+                                    
                                 </h2>
                             </div>
                             <ul className={styles["stageTwo-list-education"]}>

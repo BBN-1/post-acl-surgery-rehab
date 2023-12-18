@@ -10,6 +10,19 @@
     background-color: transparent;
 }
 
+
+.flag-container{
+  
+    transition: opacity 0.3s ease;
+}
+
+
+.header-greeting-and-language {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
 .homeIcon {
     margin-right: 10px;
 }

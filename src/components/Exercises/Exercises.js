@@ -1,33 +1,45 @@
 import styles from "./Exercises.module.css";
-import { useState, useEffect } from "react";
-import { useParams , Link } from "react-router-dom";
+import { useState, useEffect, useContext } from "react";
+import { useParams, Link } from "react-router-dom";
 import exercisesListData from "../../ExerciseData/exercises/exercises";
+import exercisesListDataInEnglish from "../../ExerciseData/exercises/exercisesInEnglish";
+import { LanguageContext } from "../../context/LanguageContext";
 
 const Exercises = () => {
     const [exerciseList, setExerciseList] = useState(null);
 
     const { exerciseStageAndType } = useParams();
+    const { language } = useContext(LanguageContext);
 
+    // First check what language is selected, then load the proper exercise list details
     useEffect(() => {
-        const currentExercisesList = exercisesListData.find(
-            (item) => item.route === exerciseStageAndType
-        );
+        if (language === "en") {
+            const currentExercisesList = exercisesListDataInEnglish.find(
+                (item) => item.route === exerciseStageAndType
+            );
 
-        if (currentExercisesList) {
-            setExerciseList(currentExercisesList);
+            if (currentExercisesList) {
+                setExerciseList(currentExercisesList);
+            }
+        } else {
+            const currentExercisesList = exercisesListData.find(
+                (item) => item.route === exerciseStageAndType
+            );
+
+            if (currentExercisesList) {
+                setExerciseList(currentExercisesList);
+            }
         }
-    }, [exerciseStageAndType]);
-
-    console.log(exerciseList);
+    }, [exerciseStageAndType, language]);
 
     return (
         <section className={styles["stage-exercises-container"]}>
             <div className={styles["exercises-link-back-wrapper"]}>
-            <Link
+                <Link
                     to={`/stages/${exerciseList?.main_stage_route}`}
                     className={styles["main-category-link"]}
                 >
-                    {exerciseList?.stage_nav} етап
+                    {exerciseList?.stage_nav} { language === "en" ? "stage" : "етап"} 
                 </Link>
             </div>
             <div className={styles["exercises-wrapper"]}>
