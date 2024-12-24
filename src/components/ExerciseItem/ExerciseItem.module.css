@@ -122,7 +122,6 @@ ul {
 
 .exercise-navigation a {
     text-decoration: none;
-    
 }
 
 .exercise-navigation-active {
@@ -154,17 +153,15 @@ ul {
 .main-category-link {
     display: flex;
     justify-content: center;
-    margin: 0 auto; 
+    margin: 0 auto;
     font-size: 20px;
     font-weight: 600;
     color: #545454;
     border-radius: 21px;
     box-shadow: 5px 5px 10px #b9bbc4;
     padding: 5px 15px;
-    margin: 0 auto; 
+    margin: 0 auto;
     transition: color 0.3s;
-    
-   
 }
 
 .main-category-link:hover {

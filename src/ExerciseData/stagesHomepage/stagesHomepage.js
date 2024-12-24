@@ -1,9 +1,10 @@
+// Importing images for different stages in Bulgarian
 import first_stage from "../../images/first_stage.png";
 import second_stage from "../../images/second_stage.png";
 import third_stage from "../../images/third_stage.png";
 import fourth_stage from "../../images/fourth_stage.png";
 
-
+// Array of stage data objects for the homepage
 const stagesDataHomepage = [
     {id:1, image: first_stage, route:"first"},
     {id:2, image: second_stage, route: "second", title: "this is title"},

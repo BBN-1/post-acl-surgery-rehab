@@ -1,9 +1,10 @@
+//// Importing images for different stages in English
 import first_stage from "../../images/first_stage_eng.png";
 import second_stage from "../../images/second_stage_eng.png";
 import third_stage from "../../images/third_stage_eng.png";
 import fourth_stage from "../../images/fourth_stage_eng.png";
 
-
+// Array of stage data objects for the homepage
 const stagesDataHomepageEng = [
     {id:1, image: first_stage, route:"first"},
     {id:2, image: second_stage, route: "second", title: "this is title"},

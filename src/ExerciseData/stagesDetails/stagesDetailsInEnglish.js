@@ -1,10 +1,12 @@
+// Importing images for different stages
 import stage_two_top from "../../images/stage_two_top.png";
 import stage_two_goals from "../../images/stage_two_goals.png";
 import stage_two_education from "../../images/stage_two_education.png";
 import first_stage_hero_tr from "../../images/stageOne/first_stage_hero_tr.png";
 import third_stage_hero_tr from "../../images/stageThree/third_stage_hero_tr.png";
-import fourth_stage_hero from "../../images/stageFour/fourth_stage_hero.png"
+import fourth_stage_hero from "../../images/stageFour/fourth_stage_hero.png";
 
+// Array of stage details objects in English
 const stagesDetailsInEnglish = [
     {
         id: 1,
@@ -30,7 +32,6 @@ const stagesDetailsInEnglish = [
             "- In order to stop using crutches, you must be able to walk without a limp while using crutches.",
             "- Monitor and control swelling.",
             "- Use ice and/or compression after exercise and as required (15-20 minutes per session)",
-            
         ],
     },
     {
@@ -56,7 +57,7 @@ const stagesDetailsInEnglish = [
             "- Start at about 50% and increase as tolerated to full weight bearing.",
             "- The diagrams and descriptions below will outline how to properly navigate different environments.",
             "- Ice pack applied immediately after surgery and used 20 minutes every hour, especially after exercises.",
-            "- Operated knee should be elevated when icing and at rest."
+            "- Operated knee should be elevated when icing and at rest.",
         ],
     },
     {
@@ -99,7 +100,6 @@ const stagesDetailsInEnglish = [
             "- Continue strengthening",
             "- Improve balance",
             "- Improve agility",
-       
         ],
         education_img: stage_two_education,
         education_list: [

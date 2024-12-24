@@ -1,10 +1,12 @@
+// Importing images for different stages
 import stage_two_top from "../../images/stage_two_top.png";
 import stage_two_goals from "../../images/stage_two_goals.png";
 import stage_two_education from "../../images/stage_two_education.png";
 import first_stage_hero_tr from "../../images/stageOne/first_stage_hero_tr.png";
 import third_stage_hero_tr from "../../images/stageThree/third_stage_hero_tr.png";
-import fourth_stage_hero from "../../images/stageFour/fourth_stage_hero.png"
+import fourth_stage_hero from "../../images/stageFour/fourth_stage_hero.png";
 
+// Array of stage details objects in Bulgarian
 const stagesDetails = [
     {
         id: 1,
@@ -56,7 +58,7 @@ const stagesDetails = [
             "- Започнете от около 50% и увеличете според поносимостта до пълно натоварване.",
             "- Снимките и описанията ще очертаят как правилно да навигирате в различни среди.",
             "- Kомпрес с лед се прилага незабавно след операция и се използва 20 минути на всеки час, особено след упражнения.",
-            "- Оперираното коляно трябва да е повдигнато и в покой когато прилагате лед"
+            "- Оперираното коляно трябва да е повдигнато и в покой когато прилагате лед",
         ],
     },
     {
@@ -99,7 +101,6 @@ const stagesDetails = [
             "- Продължете укрепването на мускулите",
             "- Подобрете баланса",
             "- Подобряване на ловкостта",
-       
         ],
         education_img: stage_two_education,
         education_list: [

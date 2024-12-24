@@ -1,3 +1,4 @@
+// Import necessary modules and components
 import styles from "./Exercises.module.css";
 import { useState, useEffect, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
@@ -6,9 +7,11 @@ import exercisesListDataInEnglish from "../../ExerciseData/exercises/exercisesIn
 import { LanguageContext } from "../../context/LanguageContext";
 
 const Exercises = () => {
+    // State to store the exercise list data
     const [exerciseList, setExerciseList] = useState(null);
-
+    // Extracting parameters from the URL
     const { exerciseStageAndType } = useParams();
+    // Accessing the current language from the LanguageContext
     const { language } = useContext(LanguageContext);
 
     // First check what language is selected, then load the proper exercise list details
@@ -39,7 +42,8 @@ const Exercises = () => {
                     to={`/stages/${exerciseList?.main_stage_route}`}
                     className={styles["main-category-link"]}
                 >
-                    {exerciseList?.stage_nav} { language === "en" ? "stage" : "етап"} 
+                    {exerciseList?.stage_nav}{" "}
+                    {language === "en" ? "stage" : "етап"}
                 </Link>
             </div>
             <div className={styles["exercises-wrapper"]}>

@@ -1,3 +1,4 @@
+// Import necessaary modules and components
 import styles from "./ExerciseItem.module.css";
 import exercisesListData from "../../ExerciseData/exercises/exercises";
 import { useParams, Link } from "react-router-dom";
@@ -6,9 +7,13 @@ import exercisesListDataInEnglish from "../../ExerciseData/exercises/exercisesIn
 import { LanguageContext } from "../../context/LanguageContext";
 
 const ExerciseItem = () => {
+    // Extracting parameters from the URL
     const { exerciseStageAndType, exerciseId } = useParams();
+    // State to manage the current exercise data
     const [exerciseData, setExerciseData] = useState(null);
+    // State to manage the current exercise list
     const [currentExercisesList, setCurrentExercisesList] = useState(null);
+    // Accessing the current language from the LanguageContext
     const { language } = useContext(LanguageContext);
 
     useEffect(() => {
@@ -17,11 +22,12 @@ const ExerciseItem = () => {
             const foundList = exercisesListDataInEnglish.find(
                 (item) => item.route === exerciseStageAndType
             );
-
+            // If the list is found, set the current exercise list and the exercise data
             if (foundList) {
                 setCurrentExercisesList(foundList);
                 setExerciseData(foundList.exercise_data[exerciseId - 1]);
             }
+        // If the language is not English, load the exercise list details in Bulgarian    
         } else {
             const foundList = exercisesListData.find(
                 (item) => item.route === exerciseStageAndType
@@ -32,9 +38,7 @@ const ExerciseItem = () => {
                 setExerciseData(foundList.exercise_data[exerciseId - 1]);
             }
         }
-    }, [exerciseStageAndType, exerciseId, language]);
-
-  
+    }, [exerciseStageAndType, exerciseId, language]); //  Dependencies for useEffect
 
     return (
         <div className={styles["stage-two-rom-card"]}>
@@ -63,7 +67,6 @@ const ExerciseItem = () => {
                     className={styles["main-category-link"]}
                 >
                     {language === "en" ? "Back" : "Назад"}
-                    
                 </Link>
             </div>
             <div className={styles["stage-two-rom-card-titles-holder"]}>
@@ -143,7 +146,6 @@ const ExerciseItem = () => {
                         }
                     >
                         {language === "en" ? "Preparation" : "Подготовка"}
-                        
                     </p>
                     <ul>
                         {exerciseData?.preparation?.map((step, index) => (
@@ -168,7 +170,6 @@ const ExerciseItem = () => {
                         }
                     >
                         {language === "en" ? "Options" : "Опции"}
-                        
                     </p>
                     <ul>
                         {exerciseData?.options?.map((step, index) => (
@@ -191,7 +192,6 @@ const ExerciseItem = () => {
                         }
                     >
                         {language === "en" ? "Execution" : "Изпълнение"}
-                       
                     </p>
                     <ul>
                         {exerciseData?.execution?.map((step, index) => (
@@ -214,7 +214,6 @@ const ExerciseItem = () => {
                         }
                     >
                         {language === "en" ? "Notes" : "Забележки"}
-                        
                     </p>
                     <ul>
                         {exerciseData?.notes?.map((note, index) => (

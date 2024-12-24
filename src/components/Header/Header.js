@@ -1,3 +1,4 @@
+// Import necessary modules and components
 import { useState, useEffect, useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -11,59 +12,62 @@ import { Link } from "react-router-dom";
 import { LanguageContext } from "../../context/LanguageContext";
 import ReactCountryFlag from "react-country-flag";
 
-const user = "";
+const user = ""; // Placeholder for user information
 
 const Header = () => {
+    // State to manage the greeting message
     const [greeting, setGreeting] = useState("");
+    // State to manage the icon based on the time of the day
     const [icon, setIcon] = useState(null);
+    // State to manage the CSS class for the time of day
     const [timeClass, setTimeClass] = useState(styles.morning);
 
-    // Language context
+    // Accessing the current language and function to change it from the LanguageContext
     const { language, setLanguage } = useContext(LanguageContext);
-    console.log(language);
-
+    
 
     // Function to switch the language
     const handleLanguageSwitch = () => {
-        const flagContainer = document.querySelector(`.${styles['flag-container']}`);;
+        const flagContainer = document.querySelector(
+            `.${styles["flag-container"]}`
+        );
         flagContainer.style.opacity = "0";
 
         setTimeout(() => {
-            setLanguage((prevLanguage) => (prevLanguage === "en" ? "bg" : "en"));
+            setLanguage((prevLanguage) =>
+                prevLanguage === "en" ? "bg" : "en"
+            );
             flagContainer.style.opacity = "1";
-          }, 300); // match this with the transition duration
-
-       
+        }, 300); // match this with the transition duration
     };
 
-   
     // Object that holds the greetings and icons according to the time of the day and language
     const greetings = {
         morning: {
             en: "Good morning",
             bg: "Добро утро",
             icon: <FontAwesomeIcon icon={faMugHot} />,
-            style: styles.morning
+            style: styles.morning,
         },
         afternoon: {
             en: "Good afternoon",
             bg: "Добър Ден!",
             icon: <FontAwesomeIcon icon={faSun} />,
-            style: styles.afternoon
+            style: styles.afternoon,
         },
         night: {
             en: "Good evening",
             bg: "Добър Вечер",
             icon: <FontAwesomeIcon icon={faWineGlass} />,
-            style: styles.night
-        }
+            style: styles.night,
+        },
     };
 
-     // Function to update the greeting and icons based on the current time
-     const updateGreeting = () => {
+    // Function to update the greeting and icons based on the current time
+    const updateGreeting = () => {
         const currentHour = new Date().getHours();
         let timeOfDay;
-    
+
         if (currentHour >= 5 && currentHour < 12) {
             timeOfDay = "morning";
         } else if (currentHour >= 12 && currentHour < 18) {
@@ -71,12 +75,12 @@ const Header = () => {
         } else {
             timeOfDay = "night";
         }
-    
+
         setGreeting(greetings[timeOfDay][language]);
         setIcon(greetings[timeOfDay].icon);
         setTimeClass(greetings[timeOfDay].style);
     };
-
+     // Update the greeting when the component mounts and when the language changes
     useEffect(() => {
         updateGreeting(); // Initial call
         const intervalId = setInterval(updateGreeting, 10 * 60 * 1000); // 10 minutes
@@ -98,7 +102,10 @@ const Header = () => {
                     <span className={styles["greeting"]}>{greeting}</span>{" "}
                     {icon} <span className={styles["header-name"]}>{user}</span>
                 </h1>
-                <button onClick={handleLanguageSwitch}>
+                <button
+                    onClick={handleLanguageSwitch}
+                    className={styles["flag-btn"]}
+                >
                     <div className={styles["flag-container"]}>
                         <ReactCountryFlag
                             countryCode={language === "en" ? "GB" : "BG"}

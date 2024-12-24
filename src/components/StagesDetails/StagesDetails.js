@@ -1,3 +1,4 @@
+// Import necessary modules and components
 import { useParams } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 import styles from "./StagesDetails.module.css";
@@ -7,10 +8,12 @@ import stagesDetailsInEnglish from "../../ExerciseData/stagesDetails/stagesDetai
 import { LanguageContext } from "../../context/LanguageContext";
 
 const StagesDetails = () => {
+    // Extracting stageNumber parameter from the URL
     const { stageNumber } = useParams();
+    // State to manage the current stage details
     const [stageDetails, setStageDetails] = useState({});
+    // Accessing the current language from the LanguageContext
     const { language } = useContext(LanguageContext);
-   
 
     // First check what language is selected, then load the proper stage details
     useEffect(() => {
@@ -95,7 +98,6 @@ const StagesDetails = () => {
                                     }
                                 >
                                     {language === "en" ? "GOALS" : "ЦЕЛИ"}
-                                   
                                 </h2>
                             </div>
 
@@ -123,7 +125,6 @@ const StagesDetails = () => {
                                     {language === "en"
                                         ? "EDUCATION"
                                         : "ОБУЧЕНИЕ НА ПАЦИЕНТА"}
-                                    
                                 </h2>
                             </div>
                             <ul className={styles["stageTwo-list-education"]}>

@@ -1,5 +1,4 @@
-//STAGE TWO ROM
-
+// Importing images for Stage Two ROM (Range of Motion) exercises
 import hang_pic_1_tr from "../../images/stageTwo/stageTwoRom/prone_hangs_1_tr.png";
 import hang_pic_2_tr from "../../images/stageTwo/stageTwoRom/prone_hangs_2_tr.png";
 import wall_slides_1_tr from "../../images/stageTwo/stageTwoRom/wall_slides_1_tr.png";
@@ -10,8 +9,7 @@ import gastroc_stretch_1_tr from "../../images/stageTwo/stageTwoRom/gastroc_stre
 import gastroc_stretch_2_tr from "../../images/stageTwo/stageTwoRom/gastroc_stretch_2_tr.png";
 import bike_tr from "../../images/stageTwo/stageTwoRom/bike_tr.png";
 
-//STAGE TWO STR
-
+// Importing images for Stage Two STR (Strength) exercises
 import chair_band_1_tr from "../../images/stageTwo/stageTwoStr/chair_band_1_tr.png";
 import chair_band_2_tr from "../../images/stageTwo/stageTwoStr/chair_band_2_tr.png";
 import chair_hamstring_1_tr from "../../images/stageTwo/stageTwoStr/chair_hamstring_1_tr.png";
@@ -30,17 +28,14 @@ import calf_raises_1_tr from "../../images/stageTwo/stageTwoStr/calf_raises_1_tr
 import calf_raises_2_tr from "../../images/stageTwo/stageTwoStr/calf_raises_2_tr.png";
 import calf_raises_3_tr from "../../images/stageTwo/stageTwoStr/calf_raises_3_tr.png";
 
-//STAGE TWO WALKING
-
+// Importing images for Stage Two WALKING exercises
 import walking_one from "../../images/stageTwo/stageTwoWalking/walking_one.png";
 import walking_two from "../../images/stageTwo/stageTwoWalking/walking_two.png";
 import walking_three from "../../images/stageTwo/stageTwoWalking/walking_three.png";
 import walking_four from "../../images/stageTwo/stageTwoWalking/walking_four.png";
 
-//STAGE ONE ROM
-
+// Importing images for Stage One ROM (Range of Motion) exercises
 import heels_over_roll_tr from "../../images/stageOne/stageOneRom/heels_over_roll_stretch_tr.png";
-
 import heel_slides_one_tr from "../../images/stageOne/stageOneRom/heel_slides_one_tr.png";
 import heel_slides_two_tr from "../../images/stageOne/stageOneRom/heel_slides_two_tr.png";
 import heel_slides_three_tr from "../../images/stageOne/stageOneRom/heel_slides_three_tr.png";
@@ -49,8 +44,7 @@ import sitting_extension_and_flexion_one_tr from "../../images/stageOne/stageOne
 import sitting_extension_and_flexion_two_tr from "../../images/stageOne/stageOneRom/sitting_extension_and_flexion_two_tr.png";
 import sitting_extension_and_flexion_three_tr from "../../images/stageOne/stageOneRom/sitting_extension_and_flexion_three_tr.png";
 
-//STAGE ONE STR
-
+// Importing images for Stage One STR (Strength) exercises
 import active_knee_flexion_one_tr from "../../images/stageOne/stageOneStr/active_knee_flexion_one_tr.png";
 import active_knee_flexion_two_tr from "../../images/stageOne/stageOneStr/active_knee_flexion_two_tr.png";
 import seated_calf_raise_one_tr from "../../images/stageOne/stageOneStr/seated_calf_raise_one_tr.png";
@@ -63,8 +57,7 @@ import hip_flexion_chair_one_tr from "../../images/stageOne/stageOneStr/hip_flex
 import hip_extension_one_tr from "../../images/stageOne/stageOneStr/hip_extension_one_tr.png";
 import hip_extension_two_tr from "../../images/stageOne/stageOneStr/hip_extension_two_tr.png";
 
-//STAGE ONE WALKING
-
+// Importing images for Stage One WALKING exercises
 import walking_crutch_one from "../../images/stageOne/stageOneWalking/walking_crutch_one.png";
 import walking_crutch_two from "../../images/stageOne/stageOneWalking/walking_crutch_two.png";
 import walking_crutch_three from "../../images/stageOne/stageOneWalking/walking_crutch_three.png";
@@ -78,9 +71,7 @@ import stairs_descend_one from "../../images/stageOne/stageOneWalking/stairs_des
 import stairs_descend_two from "../../images/stageOne/stageOneWalking/stairs_descend_two.png";
 import stairs_descend_three from "../../images/stageOne/stageOneWalking/stairs_descend_three.png";
 
-
-//STAGE THREE
-
+// Importing images for Stage Three exercises
 import standing_hamstring_curls from "../../images/stageThree/stageThreeStr/standing_hamstring_curls.png";
 import laying_hamstring_curls from "../../images/stageThree/stageThreeStr/laying_hamstring_curls.png";
 import squats_arms_fw_one from "../../images/stageThree/stageThreeStr/squats_arms_fw_one.png";
@@ -105,21 +96,19 @@ import calf_raise_single_leg_two from "../../images/stageThree/stageThreeStr/cal
 import deadlift_single_leg_one from "../../images/stageThree/stageThreeStr/deadlift_single_leg_one.png";
 import deadlift_single_leg_two from "../../images/stageThree/stageThreeStr/deadlift_single_leg_two.png";
 
-//STAGE THREE CARDIO
-
+// Importing images for Stage Three Cardio exercises
 import treadmill_walk from "../../images/stageThree/stageThreeCardio/treadmill_walk.png";
 import water_running from "../../images/stageThree/stageThreeCardio/water_running.png";
 import elliptical from "../../images/stageThree/stageThreeCardio/elliptical.png";
 import rowing_machine from "../../images/stageThree/stageThreeCardio/rowing_machine.png";
 
-//STAGE THREE BALANCE
-
+// Importing images for Stage Three Balance exercises
 import wobble_balance from "../../images/stageThree/stageThreeBalance/wobble_balance.png";
 import one_leg_balance from "../../images/stageThree/stageThreeBalance/one_leg_balance.png";
 import airplane from "../../images/stageThree/stageThreeBalance/airplane.png";
 
-//STAGE FOUR STRENGTH
 
+// Importing images for Stage Four Strength exercises
 import step_up_one from "../../images/stageFour/stageFourStr/step_up_one.png";
 import step_up_two from "../../images/stageFour/stageFourStr/step_up_two.png";
 import step_up_three from "../../images/stageFour/stageFourStr/step_up_three.png";
@@ -135,13 +124,11 @@ import monster_walk_one from "../../images/stageFour/stageFourStr/monster_walk_o
 import monster_walk_two from "../../images/stageFour/stageFourStr/monster_walk_two.png";
 import monster_walk_three from "../../images/stageFour/stageFourStr/monster_walk_three.png";
 
-//STAGE FOUR CARDIO
-
+// Importing images for Stage Four Cardio exercises
 import running from "../../images/stageFour/stageFourCardio/running.png";
 import skip_row from "../../images/stageFour/stageFourCardio/skip_row.png";
 
-//STAGE FOUR BALANCE
-
+// Importing images for Stage Four Balance exercises
 import wobble_side_to_side from "../../images/stageFour/stageFourBalance/wobble_side_to_side.png";
 import wobble_edges_off from "../../images/stageFour/stageFourBalance/wobble_edges_off.png";
 import wobble_single_leg from "../../images/stageFour/stageFourBalance/wobble_single_leg.png";
@@ -149,6 +136,7 @@ import wobble_squat from "../../images/stageFour/stageFourBalance/wobble_squat.p
 import ball_toss_one from "../../images/stageFour/stageFourBalance/ball_toss_one.png";
 import ball_toss_two from "../../images/stageFour/stageFourBalance/ball_toss_two.png";
 
+// Array of exercise data objects
 const exercisesListData = [
     {
         route: "second-rom",
@@ -575,7 +563,6 @@ const exercisesListData = [
                 img1: stairs_descend_one,
                 img2: stairs_descend_two,
                 img3: stairs_descend_three,
-              
             },
         ],
     },
@@ -931,7 +918,6 @@ const exercisesListData = [
                 notes: [],
                 img1: skip_row,
             },
-     
         ],
     },
     {

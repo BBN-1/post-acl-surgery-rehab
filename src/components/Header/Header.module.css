@@ -1,5 +1,3 @@
-
-
 .header {
     max-width: 900px;
     margin: 0 auto;
@@ -10,12 +8,14 @@
     background-color: transparent;
 }
 
+/* FLAG STYLES */
 
-.flag-container{
-  
+
+
+.flag-container {
     transition: opacity 0.3s ease;
+    background-color: #ffebe0;
 }
-
 
 .header-greeting-and-language {
     display: flex;
@@ -33,19 +33,18 @@
 
 .title {
     font-size: 19.5px;
-  
 }
 
 .morning {
-    color: white; 
+    color: white;
 }
 
 .afternoon {
-    color: orange; 
+    color: orange;
 }
 
 .night {
-    color: red; 
+    color: red;
 }
 
 .icons {
@@ -59,11 +58,9 @@
 }
 
 .greeting {
-  color: #f361a7;
+    color: #f361a7;
 }
 
 .header-name {
-  color: #f361a7;
+    color: #f361a7;
 }
-
-
